@@ -27,7 +27,7 @@ postgres:
   # List of managed schema. This skip pg_toast, pg_temp1, etc. but not pg_catalog.
   schemas_query: |
     SELECT nspname FROM pg_catalog.pg_namespace
-    WHERE nspname = 'pg_catalog' OR nspname NOT LIKE 'pg_%'
+    WHERE nspname = 'pg_catalog' OR nspname NOT LIKE 'pg_%';
   # Return managed roles which can be dropped or revoked.
   managed_roles_query: |
     SELECT 'public'
